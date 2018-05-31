@@ -1,0 +1,66 @@
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <div class="form-group">
+        <label for="monto">Ingresa el Monto</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">$</div>
+          </div>
+          <input type="text" class="form-control" id="monto" placeholder="monto" [(ngModel)]="monto">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputState">Producto</label>
+        <select id="inputState" class="form-control" [(ngModel)]="producto">
+          <option selected>Selecciona...</option>
+          <option [value]="'Hotel'">Hotel</option>
+          <option [value]="'Paquete'">Paquete</option>
+          <option [value]="'Crucero'">Crucero</option>
+          <option [value]="'Tour'">Tour</option>
+          <option [value]="'Traslado'">Traslado</option>
+          <option [value]="'all'">Otros</option>
+        </select>
+      </div>
+      <div class="alert alert-primary" role="alert">
+        <p>Calculadora de Promociones de Pago OVV 2018</p>
+        <p><small>Ingresa el Monto y selecciona el producto para conocer las promociones que apliquen</small></p>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="card text-center m-2" style="width: 350px" *ngFor="let banco of bancos | keys">
+          <div class="card-header">
+            <img src="assets/{{banco}}.png" alt="Smiley face" height="42">
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <ng-container *ngFor="let msi of bancos[banco] | keys">
+                <li class="list-group-item" *ngIf="getMonto()>=bancos[banco][msi]['min']">
+                  <div class="row">
+                    <div class="col-4 text-success">
+                        {{ msi }}
+                    </div>
+                    <div class="col-8">
+                      <p><small>Meses de:</small><b> {{ getMonto()/bancos[banco][msi]['msi'] | currency:'MXN':'symbol-narrow':'.2-2' }}</b></p>
+                    </div>
+                  </div>
+                  <ng-container *ngFor="let bons of bancos[banco][msi]['bon']">
+                    <ng-container *ngIf="bons['status']">
+                      <ng-container *ngFor="let prod of bons['producto'] | keys">
+                        <div class="alert alert-success m-0 p-0" role="alert" style="font-size: smaller" *ngIf="(prod == producto || prod == 'all') && getMonto()>=bons['producto'][prod]['min']">
+                          <p style="font-size: smaller" class="text-success m-0 p-0">{{bons['producto'][prod].bon(getMonto())}}</p>
+                          <p style="font-size: smaller" class="text-success m-0 p-0">Total: <b>{{bons['producto'][prod].bonTotal(getMonto())}}</b></p>
+                        </div>
+                      </ng-container>
+                    </ng-container>
+                  </ng-container>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
