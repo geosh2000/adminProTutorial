@@ -18,6 +18,10 @@ import { RegisterComponent } from './login/register.component';
 // Pipes
 import { KeysPipe } from './pipes/keys.pipe';
 
+// Servicios
+import { ServiceModule } from './services/service.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

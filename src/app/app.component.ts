@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SettingService } from './services/service.index';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor( public _ajustes: SettingService ) {
+
+  }
 
 }
